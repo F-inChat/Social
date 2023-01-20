@@ -1,0 +1,129 @@
+:root {
+    --PrMagenta: hsl(300, 43%, 22%);
+    --PrPink: hsl(333, 80%, 67%);
+    --ScnDarkMagenta: hsl(303, 10%, 53%);
+    --ScnLightMagenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+    --fw4: 400;
+    --fw5: 500;
+    --fw7: 700;
+}
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-image: url(/images/bg-pattern-top-desktop.svg),
+    url(/images/bg-pattern-bottom-desktop.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-size: 15px;
+    margin: 1.1rem;
+    display: grid;
+    place-items: center;
+}
+.main-container {
+    display: grid;
+    padding: 2rem;
+    gap: 1rem;
+}
+.title {
+    gap: 1rem;
+    font-size: var(--fw5);
+    text-align: center;
+}
+h1 {
+    font-size: 2rem;
+    color: var(--PrMagenta);
+    font-weight: var(--fw7);
+    line-height: 1;
+}
+.rating p { 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ScnLightMagenta);
+    color: var(--PrMagenta);
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--fw7);
+}
+.rating p::before { 
+        content: '';
+        width: 6rem;
+        height: 1rem;
+        display: block;
+        background-image: url(/images/icon-star.svg);
+        background-repeat: space;
+        margin: auto;
+    }
+.testaments {
+    color: var(--White);
+    display: grid;
+    gap: 1rem;
+    
+}
+.box {
+    border-radius: .5rem;
+    padding: 2rem;
+    background-color: var(--PrMagenta);
+    text-align:left;
+}
+
+.box img {
+    border-radius: 50%;
+    width: 3rem;
+    display: inline-flex;
+}
+.user {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+@media (min-width: 50em){
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-image: url(/images/bg-pattern-top-desktop.svg),
+    url(/images/bg-pattern-bottom-desktop.svg);
+    background-size: 40%, 80%;
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-size: 15px;
+}
+.main-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5rem;
+    max-width: 1060px;
+}
+.testaments {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 2;
+    flex-direction: row;
+    
+}
+.rating p { 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.rating p::before {
+    margin: 1rem;
+}
+.title {
+    text-align: start; 
+}
+.box:nth-child(2) {
+    transform: translateY(2em);
+}
+.box:nth-child(3) {
+    transform: translateY(4em);
+}
+.rating p:nth-child(2){
+    transform: translateX(2em);
+}
+.rating p:nth-child(3){
+    transform: translateX(4em);
+}
+}
